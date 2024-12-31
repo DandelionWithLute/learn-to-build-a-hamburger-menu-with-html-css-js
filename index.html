@@ -9,6 +9,45 @@
     <link rel="stylesheet" href="" />
   </head>
   <body>
-    <script src="" async defer></script>
+    <nav style="height: 100vh">
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          gap: 72px; 
+        "
+      >
+        <span
+          style="position: absolute; font-size: 72px; margin-top: 300px"
+          id="one"
+          >1</span
+        >
+        <span
+          style="position: absolute; font-size: 72px; margin-top: 300px"
+          id="two"
+          >2</span
+        >
+        <span
+          style="position: absolute; font-size: 72px; margin-top: 300px"
+          id="three"
+          >3</span
+        >
+      </div>
+    </nav>
+    <div style="height: 100vh">1</div>
+    <script src="" async defer>
+      const one = document.getElementById("one");
+      const two = document.getElementById("two");
+      const three = document.getElementById("three");
+
+      window.addEventListener("scroll", () => {
+        const value = window.scrollY;
+        const screenValue = window.screenY;
+        console.log(value);
+
+        one.style.top = value * 5 + "px";
+        three.style.top = -value * 5 + "px";
+      });
+    </script>
   </body>
 </html>
